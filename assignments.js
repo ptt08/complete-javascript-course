@@ -1,6 +1,6 @@
 // Values and variables
-let country = "Japan";
-let continent = "Asia";
+const country = "Japan";
+const continent = "Asia";
 let population = 125_700_000;
 
 // console.log(country);
@@ -9,8 +9,11 @@ let population = 125_700_000;
 
 // Data types
 let isIsland = true;
-let language;
-console.log(isIsland);
-console.log(population);
-console.log(country);
-console.log(language);
+
+// console.log(isIsland);
+// console.log(population);
+// console.log(country);
+// console.log(language);
+
+// let, const and var
+const language = "Japanese";
