@@ -27,7 +27,6 @@ console.log(age);
 
 var job = 'programmer';
 job = 'singer';
-*/
 
 // Math operators
 const currentYear = 2085;
@@ -53,3 +52,15 @@ console.log(x);
 
 // Comparison operators
 console.log(ageJohn > ageMariah)
+*/
+
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10
+console.log(x, y);
+
+const currentYear = 2085;
+const ageJohn = currentYear - 1992;
+const ageMariah = currentYear - 2023;
+
+const averageAge = (ageJohn + ageMariah) / 2
+console.log(averageAge);
