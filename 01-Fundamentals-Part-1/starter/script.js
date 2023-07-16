@@ -1,3 +1,4 @@
+/*
 let js = "amazing";
 // if (js === 'amazing') alert('Hello World!');
 console.log(69 + 420);
@@ -26,3 +27,29 @@ console.log(age);
 
 var job = 'programmer';
 job = 'singer';
+*/
+
+// Math operators
+const currentYear = 2085;
+const ageJohn = currentYear - 1992;
+const ageMariah = currentYear - 2023;
+console.log(ageJohn, ageMariah);
+
+console.log(ageJohn * 2, ageMariah / 10, 2**3)
+
+const firstName = "John";
+const lastName = "Doe";
+console.log(firstName + ' ' + lastName)
+// console.log(`${firstName} ${lastName}`)
+
+// Assignment operators
+let x = 10 + 5;
+x += 10;
+x *= 4;
+x++;
+x--;
+x--;
+console.log(x);
+
+// Comparison operators
+console.log(ageJohn > ageMariah)

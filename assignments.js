@@ -8,7 +8,7 @@ let population = 125_700_000;
 // console.log(population);
 
 // Data types
-let isIsland = true;
+const isIsland = true;
 
 // console.log(isIsland);
 // console.log(population);
@@ -17,3 +17,14 @@ let isIsland = true;
 
 // let, const and var
 const language = "Japanese";
+
+// Basic operators
+console.log(population / 2);
+population++;
+console.log(population);
+
+let finlandPopulation = 6_000_000;
+console.log(population > finlandPopulation)
+
+const description = `${country} is in ${continent}, and its ${population} people speak ${language}`;
+console.log(description);
