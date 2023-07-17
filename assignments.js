@@ -1,7 +1,7 @@
 // Values and variables
 const country = "Japan";
 const continent = "Asia";
-let population = 125_700_000;
+let population = 126;
 
 // console.log(country);
 // console.log(continent);
@@ -23,8 +23,15 @@ const language = "Japanese";
 // population++;
 // console.log(population);
 
-// let finlandPopulation = 6_000_000;
+// let finlandPopulation = 6;
 // console.log(population > finlandPopulation)
 
-// const description = `${country} is in ${continent}, and its ${population} people speak ${language}`;
+// const description = `${country} is in ${continent}, and its ${population} million people speak ${language}`;
 // console.log(description);
+
+// If / else statements
+if (population > 33) {
+    console.log(`${country}'s population is above average`);
+} else {
+    console.log(`${country}'s population is ${33 - population} million below average`);
+}
