@@ -1,7 +1,7 @@
 // Values and variables
 const country = "Japan";
 const continent = "Asia";
-let population = 126;
+let population = 126    ;
 
 // console.log(country);
 // console.log(continent);
