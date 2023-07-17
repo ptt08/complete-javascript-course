@@ -52,7 +52,6 @@ console.log(x);
 
 // Comparison operators
 console.log(ageJohn > ageMariah)
-*/
 
 let x, y;
 x = y = 25 - 10 - 5; // x = y = 10
@@ -64,3 +63,25 @@ const ageMariah = currentYear - 2023;
 
 const averageAge = (ageJohn + ageMariah) / 2
 console.log(averageAge);
+
+const firstName = 'John';
+const job = 'teacher';
+const birthYear = 2000;
+const year = 2027;
+
+const john = "I'm " + firstName + ', a ' + (year - birthYear) + ' year old ' + job + '!';
+
+const johnNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+console.log(johnNew);
+
+console.log(`Just a regular string....`);
+
+console.log('String with \n\
+multiple \n\
+lines');
+
+console.log(`String
+multiple
+lines`);
+
+*/

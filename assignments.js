@@ -19,12 +19,12 @@ const isIsland = true;
 const language = "Japanese";
 
 // Basic operators
-console.log(population / 2);
-population++;
-console.log(population);
+// console.log(population / 2);
+// population++;
+// console.log(population);
 
-let finlandPopulation = 6_000_000;
-console.log(population > finlandPopulation)
+// let finlandPopulation = 6_000_000;
+// console.log(population > finlandPopulation)
 
-const description = `${country} is in ${continent}, and its ${population} people speak ${language}`;
-console.log(description);
+// const description = `${country} is in ${continent}, and its ${population} people speak ${language}`;
+// console.log(description);
