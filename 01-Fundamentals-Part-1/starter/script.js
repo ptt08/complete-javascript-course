@@ -84,8 +84,6 @@ console.log(`String
 multiple
 lines`);
 
-*/
-
 const age = 15;
 
 if (age >= 18) {
@@ -103,3 +101,24 @@ if (birthYear <= 2000) {
     century = 21;
 }
 console.log(century);
+
+
+// Type conversion
+const inputYear = '1992';
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number('John'));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+// Type coercion
+console.log('I am ' + 23 + ' years old!');
+console.log('23' - '10' - 3);
+console.log('23' * '3');
+
+let n = '1' + 1;
+n = n - 1;
+console.log(n);
+*/ 
