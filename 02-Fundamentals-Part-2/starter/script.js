@@ -135,8 +135,6 @@ console.log(age1, age2, age3);
 const ages = [age1, age2, age3];
 console.log(ages);
 
-*/
-
 const friends = ['Michael', 'Steven', 'Peter'];
 
 // Add elements
@@ -167,3 +165,39 @@ console.log(friends.includes(23));
 if (friends.includes('Steven')) {
     console.log('You have a friend called Steven');
 }
+*/
+
+const john = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 2037 - 2000,
+    job: 'teacher',
+    friends: ['Michael', 'Steven', 'Peter']
+};
+console.log(john);
+
+console.log(john.lastName);
+console.log(john['lastName']);
+
+const nameKey = 'Name';
+console.log(john['first' + nameKey]);
+console.log(john['last' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about John? Choose between firstName, lastName, age, job and friends');
+
+if (john[interestedIn]) {
+    console.log(john[interestedIn]);
+} else {
+    console.log('Wrong request! Choose between firstName, lastName, age, job and friends');
+}
+
+john.location = 'Japan';
+john['twitter'] = '@johndoe';
+console.log(john);
+
+// Challenge
+// "John has 3 friends, and his best friend is called Michael"
+
+const message = `${john.firstName} has ${john.friends.length} friends, and his best friend is called ${john.friends[0]}`;
+
+console.log(message);
