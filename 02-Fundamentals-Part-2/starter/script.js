@@ -8,7 +8,6 @@ if (hasDriversLicense) console.log('I can drive :D');
 
 // const interface = 'Audio';
 // const private = 4343;
-*/
 
 function logger() {
     console.log('My name is John');
@@ -28,3 +27,21 @@ const appleJuice = fruitProcessor(5, 0);
 
 console.log(appleJuice);
 console.log(fruitProcessor(5, 0));
+*/
+
+
+// Function declaration
+function calcAge1(birthYear) {
+    return 2038 - birthYear;
+}
+
+const age1 = calcAge1(1998);
+
+// Function expression
+const calcAge2 = function (birthYear) {
+    return 2038 - birthYear;
+}
+
+const age2 = calcAge2(1991);
+
+console.log(age1, age2);
