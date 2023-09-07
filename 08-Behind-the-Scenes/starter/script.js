@@ -158,7 +158,6 @@ var addArrow = (a, b) => {
 };
 
 addArrow(2, 3, 6);
-*/
 
 let lastName = 'Williams';
 let oldLastName = lastName;
@@ -193,3 +192,5 @@ jessicaCopy.family.push('John');
 
 console.log('Before marriage:', jessica2);
 console.log('After marriage:', jessicaCopy);
+
+*/
