@@ -94,7 +94,7 @@ const calcDisplaySummary = function (acc) {
 
   const out = acc.movements
     .filter(mov => mov < 0)
-    .reduce((acc, cur) => acc + cur);
+    .reduce((acc, cur) => acc + cur, 0);
   labelSumOut.textContent = `${out}€`;
 
   const interest = acc.movements
@@ -154,22 +154,48 @@ btnLogin.addEventListener('click', function (e) {
 
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
-  const amount = +inputTransferAmount.value;
-  const receiverAcc = accounts.find(
-    acc => acc.username === inputTransferTo.value
-  );
-  inputTransferTo.value = inputTransferAmount.value = '';
+
+  if (accounts.includes(currentAccount)) {
+    const amount = +inputTransferAmount.value;
+    const receiverAcc = accounts.find(
+      acc => acc.username === inputTransferTo.value
+    );
+    inputTransferTo.value = inputTransferAmount.value = '';
+
+    if (
+      amount > 0 &&
+      receiverAcc &&
+      currentAccount.balance >= amount &&
+      receiverAcc?.username !== currentAccount.username
+    ) {
+      currentAccount.movements.push(-amount);
+      receiverAcc.movements.push(amount);
+      updateUI(currentAccount);
+    }
+  }
+});
+
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
 
   if (
-    amount > 0 &&
-    receiverAcc &&
-    currentAccount.balance >= amount &&
-    receiverAcc?.username !== currentAccount.username
+    currentAccount.username === inputCloseUsername.value &&
+    currentAccount.pin === Number(inputClosePin.value)
   ) {
-    currentAccount.movements.push(-amount);
-    receiverAcc.movements.push(amount);
-    updateUI(currentAccount);
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+    console.log(index);
+
+    // Delete account
+    accounts.splice(index, 1);
+
+    // Hide UI
+    containerApp.style.opacity = 0;
+
+    currentAccount = {};
   }
+  inputCloseUsername.value = inputClosePin.value = '';
 });
 
 /////////////////////////////////////////////////
