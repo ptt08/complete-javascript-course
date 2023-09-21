@@ -284,7 +284,7 @@ console.log(Number.isInteger(23));
 console.log(Number.isInteger(23.0));
 console.log(Number.isInteger(33 / 0));
 */
-
+/*
 console.log(Math.sqrt(2));
 console.log(25 ** (1 / 2));
 console.log(8 ** (1 / 3));
@@ -328,3 +328,66 @@ console.log((2.7).toFixed(0));
 console.log((2.7).toFixed(3));
 console.log((2.345).toFixed(2));
 console.log(+(2.345).toFixed(2));
+*/
+/*
+console.log(5 % 2);
+console.log(5 / 2);
+
+console.log(8 % 3);
+console.log(8 / 3);
+
+console.log(6 % 2);
+console.log(6 / 2);
+
+console.log(7 % 2);
+console.log(7 / 2);
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(8));
+console.log(isEven(23));
+console.log(isEven(374));
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+    if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+    if (i % 3 === 0) row.style.backgroundColor = 'blue';
+  });
+});
+*/
+
+// const diameter = 287_460_000_000;
+// console.log(diameter);
+
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+console.log(9034728947289348923789437289748924890n);
+console.log(BigInt(9034728947289));
+
+// Operations
+
+console.log(10000n + 10000n);
+console.log(483902840923890489023n * 100000000n);
+// console.log(Math.sqrt(16n));
+
+const huge = 839084829904820489029034n;
+const num = 23;
+
+console.log(huge * BigInt(num));
+
+// Exceptions
+console.log(20n > 16);
+console.log(20n === 20);
+console.log(typeof 20, typeof 20n);
+console.log(20n == 20);
+console.log(20n == '20');
+
+console.log(huge + ' is REALLY big');
+
+// Divisions
+console.log(11n / 3n);
+console.log(10 / 3);
