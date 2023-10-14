@@ -42,3 +42,26 @@ console.log(lucca.species, matilda.species);
 
 console.log(lucca.hasOwnProperty('firstName'));
 console.log(lucca.hasOwnProperty('species'));
+
+console.log(lucca.__proto__);
+// Object.prototype (top of prototype chain)
+console.log(lucca.__proto__.__proto__);
+console.log(lucca.__proto__.__proto__.__proto__);
+
+console.log(Person.prototype.constructor.__proto__);
+
+const arr = [1, 23, 3, 4, 5, 6, 7, 4, 3, 2, 1]; // new Array === []
+
+console.log(arr.__proto__);
+console.log(arr.__proto__ === Array.prototype);
+
+console.log(arr.__proto__.__proto__);
+
+Array.prototype.unique = function () {
+  return [...new Set(this)];
+};
+
+console.log(arr.unique());
+
+const h1 = document.querySelector('h1');
+console.dir(x => x + 1);
