@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 // const Person = function (firstName, birthYear) {
 //   // Instance properties
 //   this.firstName = firstName;
@@ -86,9 +86,8 @@ DATA CAR 1: 'BMW' going at 120 km/h
 DATA CAR 2: 'Mercedes' going at 95 km/h
 
 GOOD LUCK 😀
-*/
 
-/*
+
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -112,7 +111,7 @@ car1.brake();
 car1.accelerate();
 
 car2.accelerate();
-*/
+
 
 // Class expression
 // const PersonCl = class {}
@@ -172,7 +171,7 @@ jessica.greet();
 
 const walter = new PersonCl('Walter White', 1965);
 
-/*
+
 const account = {
   owner: 'jonas',
   movements: [100, 232, 345, 1001],
@@ -190,7 +189,6 @@ console.log(account.latest);
 
 account.latest = 50;
 console.log(account.movements);
-*/
 
 const PersonProto = {
   calcAge() {
@@ -215,7 +213,7 @@ console.log(steven.__proto__ === PersonProto);
 const sarah = Object.create(PersonProto);
 sarah.init('Sarah', 1997);
 sarah.calcAge();
-
+*/
 ///////////////////////////////////////
 // Coding Challenge #2
 
@@ -315,6 +313,7 @@ DATA CAR 1: 'Tesla' going at 120 km/h, with a charge of 23%
 GOOD LUCK 😀
 */
 
+/*
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -350,3 +349,45 @@ EV.prototype.accelerate = function () {
 };
 
 const tesla = new EV('Tesla', 120, 23);
+*/
+
+class Person {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  calcAge() {
+    console.log(2023 - this.birthYear);
+  }
+
+  static hello() {
+    console.log('hello');
+  }
+}
+
+class Student extends Person {
+  constructor(firstName, birthYear, course) {
+    // Always needs to happen first!
+    super(firstName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(`My name is ${this.firstName} and I study ${this.course}`);
+  }
+
+  calcAge() {
+    console.log(
+      `I'm ${
+        2037 - this.birthYear
+      } years old, but as a student I feel more like ${
+        2037 - this.birthYear + 10
+      }`
+    );
+  }
+}
+
+const marcia = new Student('Marcia', 2000, 'Computer Science');
+marcia.introduce();
+marcia.calcAge();
