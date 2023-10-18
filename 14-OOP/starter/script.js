@@ -393,6 +393,7 @@ marcia.introduce();
 marcia.calcAge();
 */
 
+/*
 const PersonProto = {
   calcAge() {
     console.log(2037 - this.birthYear);
@@ -420,3 +421,75 @@ const jay = Object.create(StudentProto);
 jay.init('Jay', 2000, 'Computer Science');
 jay.introduce();
 jay.calcAge();
+*/
+
+// 1) Public fields
+// 2) Private fields
+// 3) Public methods
+// 4) Private methods
+// (there is also the static version)
+
+class Account {
+  // 1) Public fields (instances)
+  locale = navigator.language;
+
+  // 2) Private fields (instances)
+  #movements = [];
+  #pin;
+
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    // Protected property
+    this.#pin = pin;
+    // this._movements = [];
+    // this.locale = navigator.language;
+
+    console.log(`Thanks for opening an account, ${owner}`);
+  }
+
+  // 3)Public methods
+
+  // Public interface
+  get movements() {
+    return this.#movements;
+  }
+
+  deposit(value) {
+    this.#movements.push(value);
+  }
+
+  withdraw(value) {
+    this.deposit(-value);
+  }
+
+  requestLoan(value) {
+    if (this._approveLoan(value)) {
+      this.deposit(value);
+      console.log(`Loan approved`);
+    }
+  }
+
+  get balance() {
+    return this._movements.reduce((a, b) => a + b);
+  }
+
+  static helper() {
+    console.log('Helper');
+  }
+
+  // Private methods
+  _approveLoan(value) {
+    return true;
+  }
+}
+
+const acc1 = new Account('Lucca', 'USD', 1234);
+
+acc1.deposit(200);
+acc1.withdraw(130);
+acc1.requestLoan(10000);
+
+console.log(acc1);
+// console.log(acc1.#movements);
+// console.log(acc1.#pin);
