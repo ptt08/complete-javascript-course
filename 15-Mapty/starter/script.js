@@ -302,7 +302,13 @@ class App {
 
     if (!data) return;
 
-    this.#workouts = data;
+    this.#workouts = data.map(work => {
+      const { coords, distance, duration } = work;
+      if (work.type === 'running')
+        return new Running(coords, distance, duration, work.cadence);
+      if (work.type === 'cycling')
+        return new Cycling(coords, distance, duration, work.elevationGain);
+    });
 
     this.#workouts.forEach(work => {
       this._renderWorkout(work);
