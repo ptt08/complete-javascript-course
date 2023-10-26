@@ -5,9 +5,9 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
 
-const renderCountry = function (data) {
+const renderCountry = function (data, cl) {
   const html = `
-  <article class="country">
+  <article class="country ${cl}">
     <img class="country__img" src="${data.flags.png}" />
     <div class="country__data">
       <h3 class="country__name">${data.name.common}</h3>
@@ -76,9 +76,20 @@ const request = fetch(`https://restcountries.com/v3.1/name/${country}`);
 console.log(request);
 
 const getCountryData = function (country) {
+  // Country 1
   fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then(response => response.json())
-    .then(data => renderCountry(data[0]));
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbor = data[0].borders?.[0];
+
+      if (!neighbor) return;
+
+      // Country 2
+      return fetch(`https://restcountries.com/v3.1/alpha/${neighbor}`);
+    })
+    .then(response => response.json())
+    .then(data => renderCountry(data[0], 'neighbour'));
 };
 
 getCountryData(country);
