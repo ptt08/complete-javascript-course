@@ -29,39 +29,56 @@ const renderCountry = function (data) {
   countriesContainer.style.opacity = 1;
 };
 
-const getCountryAndNeighbor = function (country) {
-  // AJAX call country (1)
-  const request = new XMLHttpRequest();
-  request.open('GET', `https://restcountries.com/v3.1/name/${country}`);
-  request.send();
+// const getCountryAndNeighbor = function (country) {
+//   // AJAX call country (1)
+//   const request = new XMLHttpRequest();
+//   request.open('GET', `https://restcountries.com/v3.1/name/${country}`);
+//   request.send();
 
-  request.addEventListener('load', function () {
-    console.log(this.responseText);
+//   request.addEventListener('load', function () {
+//     console.log(this.responseText);
 
-    const [data] = JSON.parse(this.responseText);
-    console.log(data);
+//     const [data] = JSON.parse(this.responseText);
+//     console.log(data);
 
-    // Render country
-    renderCountry(data);
+//     // Render country
+//     renderCountry(data);
 
-    // Get neighbor country (2)
-    console.log(data.borders);
-    const neighbor = data.borders?.[0];
+//     // Get neighbor country (2)
+//     console.log(data.borders);
+//     const neighbor = data.borders?.[0];
 
-    if (!neighbor) return;
+//     if (!neighbor) return;
 
-    const request2 = new XMLHttpRequest();
-    request2.open('GET', `https://restcountries.com/v3.1/alpha/${neighbor}`);
-    request2.send();
+//     const request2 = new XMLHttpRequest();
+//     request2.open('GET', `https://restcountries.com/v3.1/alpha/${neighbor}`);
+//     request2.send();
 
-    request2.addEventListener('load', function () {
-      const [data] = JSON.parse(this.responseText);
+//     request2.addEventListener('load', function () {
+//       const [data] = JSON.parse(this.responseText);
 
-      console.log(data);
+//       console.log(data);
 
-      renderCountry(data);
-    });
-  });
+//       renderCountry(data);
+//     });
+//   });
+// };
+
+// getCountryAndNeighbor('brazil');
+
+//   const request = new XMLHttpRequest();
+//   request.open('GET', `https://restcountries.com/v3.1/name/${country}`);
+//   request.send();
+
+const country = 'portugal';
+const request = fetch(`https://restcountries.com/v3.1/name/${country}`);
+
+console.log(request);
+
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v3.1/name/${country}`)
+    .then(response => response.json())
+    .then(data => renderCountry(data[0]));
 };
 
-getCountryAndNeighbor('brazil');
+getCountryData(country);
