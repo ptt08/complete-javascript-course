@@ -178,7 +178,7 @@ TEST COORDINATES 2: -33.933, 18.474
 
 GOOD LUCK 😀
 */
-
+/*
 const API_TOKEN = 'pk.9f5806dc1f06598c68d3aa4c0fb7f63b';
 
 const whereAmI = function (lat, lng) {
@@ -215,3 +215,15 @@ const whereAmI = function (lat, lng) {
 //   whereAmI(latitude, longitude);
 // });
 whereAmI(52.508, 13.381);
+*/
+
+console.log('Test start');
+setTimeout(() => console.log('0 sec timer'), 0);
+Promise.resolve('Resolved promise 1').then(res => console.log(res));
+
+Promise.resolve('Resolved promise 2').then(res => {
+  for (let i = 0; i < 1_000_000_000; i++) {}
+  console.log(res);
+});
+
+console.log('Test end');
