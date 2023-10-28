@@ -376,23 +376,42 @@ const getPosition = function () {
 };
 
 const whereAmI = async function () {
-  // Geolocation
-  const pos = await getPosition();
-  const { latitude: lat, longitude: lng } = pos.coords;
+  try {
+    // Geolocation
+    const pos = await getPosition();
+    const { latitude: lat, longitude: lng } = pos.coords;
 
-  // Reverse geocoding
-  const resGeo = await fetch(
-    `https://us1.locationiq.com/v1/reverse?key=${API_TOKEN}&lat=${lat}&lon=${lng}&format=json`
-  );
-  const dataGeo = await resGeo.json();
+    // Reverse geocoding
+    const resGeo = await fetch(
+      `https://us1.locationiq.com/v1/reverse?key=${API_TOKEN}&lat=${lat}&lon=${lng}&format=json`
+    );
+    if (!resGeo.ok) throw new Error('Problem getting location data.');
 
-  const { city, country } = dataGeo.address;
-  console.log(`You are in ${city}, ${country}`);
+    const dataGeo = await resGeo.json();
 
-  // Country data
-  const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
-  const data = await res.json();
-  renderCountry(data[0]);
+    const { city, country } = dataGeo.address;
+    console.log(`You are in ${city}, ${country}`);
+
+    // Country data
+    const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+    if (!res.ok) throw new Error('Problem getting country.');
+
+    const data = await res.json();
+    renderCountry(data[0]);
+  } catch (err) {
+    console.error(`${err} 💥`);
+    renderError(`💥 ${err.message}`);
+  }
 };
 
 whereAmI();
+whereAmI();
+whereAmI();
+
+// try {
+//   let y = 1;
+//   const x = 2;
+//   y = 3;
+// } catch (err) {
+//   alert(err.message);
+// }
