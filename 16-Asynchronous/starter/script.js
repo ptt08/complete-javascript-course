@@ -26,7 +26,7 @@ const renderCountry = function (data, cl) {
   `;
 
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  // countriesContainer.style.opacity = 1;
+  countriesContainer.style.opacity = 1;
 };
 
 const renderError = function (msg) {
@@ -260,52 +260,45 @@ wait(2)
 */
 
 const API_TOKEN = 'pk.9f5806dc1f06598c68d3aa4c0fb7f63b';
-const getPosition = function () {
-  return new Promise(function (resolve, reject) {
-    navigator.geolocation.getCurrentPosition(resolve, reject);
-  });
-};
 
 // getPosition()
 //   .then(res => console.log(res))
 //   .catch(err => console.error(err.message));
 
-const whereAmI = function () {
-  getPosition()
-    .then(pos => {
-      const { latitude: lat, longitude: lng } = pos.coords;
-      return fetch(
-        `https://us1.locationiq.com/v1/reverse?key=${API_TOKEN}&lat=${lat}&lon=${lng}&format=json`
-      );
-    })
-    .then(response => {
-      if (!response.ok)
-        throw new Error(`Problem with geocoding ${response.status}`);
+// const whereAmI = function () {
+//   getPosition()
+//     .then(pos => {
+//       const { latitude: lat, longitude: lng } = pos.coords;
+//       return fetch(
+//         `https://us1.locationiq.com/v1/reverse?key=${API_TOKEN}&lat=${lat}&lon=${lng}&format=json`
+//       );
+//     })
+//     .then(response => {
+//       if (!response.ok)
+//         throw new Error(`Problem with geocoding ${response.status}`);
 
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-      const { country, city } = data.address;
-      console.log(`You are in ${city}, ${country}`);
+//       return response.json();
+//     })
+//     .then(data => {
+//       console.log(data);
+//       const { country, city } = data.address;
+//       console.log(`You are in ${city}, ${country}`);
 
-      return fetch(`https://restcountries.com/v3.1/name/${country}`);
-    })
-    .then(response => {
-      if (!response.ok) throw new Error(`Country not found!`);
+//       return fetch(`https://restcountries.com/v3.1/name/${country}`);
+//     })
+//     .then(response => {
+//       if (!response.ok) throw new Error(`Country not found!`);
 
-      return response.json();
-    })
-    .then(data => {
-      renderCountry(data[0]);
-    })
-    .catch(err => console.error(`${err.message} 💥💥💥`))
-    .finally(() => (countriesContainer.style.opacity = 1));
-};
+//       return response.json();
+//     })
+//     .then(data => {
+//       renderCountry(data[0]);
+//     })
+//     .catch(err => console.error(`${err.message} 💥💥💥`))
+//     .finally(() => (countriesContainer.style.opacity = 1));
+// };
 
-btn.addEventListener('click', whereAmI);
-
-btn.style.display = 'none';
+// btn.addEventListener('click', whereAmI);
 
 ///////////////////////////////////////
 // Coding Challenge #2
@@ -332,6 +325,7 @@ TEST DATA: Images in the img folder. Test the error handler by passing a wrong i
 GOOD LUCK 😀
 */
 
+/*
 const imagesContainer = document.querySelector('.images');
 
 const wait = function (seconds) {
@@ -374,3 +368,31 @@ createImage('img/img-1.jpg')
   })
   .then(() => (currentImg.style.display = 'none'))
   .catch(err => console.error(err));
+*/
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+const whereAmI = async function () {
+  // Geolocation
+  const pos = await getPosition();
+  const { latitude: lat, longitude: lng } = pos.coords;
+
+  // Reverse geocoding
+  const resGeo = await fetch(
+    `https://us1.locationiq.com/v1/reverse?key=${API_TOKEN}&lat=${lat}&lon=${lng}&format=json`
+  );
+  const dataGeo = await resGeo.json();
+
+  const { city, country } = dataGeo.address;
+  console.log(`You are in ${city}, ${country}`);
+
+  // Country data
+  const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+  const data = await res.json();
+  renderCountry(data[0]);
+};
+
+whereAmI();
