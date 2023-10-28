@@ -429,6 +429,7 @@ console.log('1: Will get location');
 })();
 */
 
+/*
 const get3Countries = async function (c1, c2, c3) {
   try {
     // const [data1] = await getJSON(`https://restcountries.com/v3.1/name/${c1}`);
@@ -448,3 +449,52 @@ const get3Countries = async function (c1, c2, c3) {
 };
 
 get3Countries('portugal', 'brazil', 'russia');
+*/
+
+// Promise.race
+(async function () {
+  const res = await Promise.race([
+    getJSON(`https://restcountries.com/v3.1/name/italy`),
+    getJSON(`https://restcountries.com/v3.1/name/mexico`),
+    getJSON(`https://restcountries.com/v3.1/name/chile`),
+  ]);
+  console.log(res[0]);
+})();
+
+const timeout = function (seconds) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error('Request took too long!'));
+    }, seconds * 1000);
+  });
+};
+
+Promise.race([getJSON(`https://restcountries.com/v3.1/name/italy`), timeout(5)])
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
+
+// Promise.allSettled
+Promise.allSettled([
+  Promise.resolve('Success'),
+  Promise.reject('Error'),
+  Promise.resolve('Success'),
+  Promise.resolve('Another Success'),
+]).then(res => console.log(res));
+
+Promise.all([
+  Promise.resolve('Success'),
+  Promise.reject('Error'),
+  Promise.resolve('Success'),
+  Promise.resolve('Another Success'),
+])
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
+
+// Promise.any
+Promise.any([
+  Promise.resolve('Success'),
+  Promise.reject('Error'),
+  Promise.resolve('Another Success'),
+])
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
