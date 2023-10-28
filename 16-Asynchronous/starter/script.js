@@ -146,9 +146,9 @@ const getCountryData = function (country) {
     });
 };
 
-btn.addEventListener('click', function () {
-  getCountryData('portugal');
-});
+// btn.addEventListener('click', function () {
+//   getCountryData('portugal');
+// });
 
 // getCountryData('australia');
 
@@ -230,6 +230,7 @@ Promise.resolve('Resolved promise 2').then(res => {
 console.log('Test end');
 */
 
+/*
 const lotteryPromise = new Promise(function (resolve, reject) {
   console.log('Lottery draw is happening 🔮');
   setTimeout(function () {
@@ -256,3 +257,50 @@ wait(2)
     return wait(1);
   })
   .then(() => console.log('I waited for 1 second'));
+*/
+
+const API_TOKEN = 'pk.9f5806dc1f06598c68d3aa4c0fb7f63b';
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+// getPosition()
+//   .then(res => console.log(res))
+//   .catch(err => console.error(err.message));
+
+const whereAmI = function () {
+  getPosition()
+    .then(pos => {
+      const { latitude: lat, longitude: lng } = pos.coords;
+      return fetch(
+        `https://us1.locationiq.com/v1/reverse?key=${API_TOKEN}&lat=${lat}&lon=${lng}&format=json`
+      );
+    })
+    .then(response => {
+      if (!response.ok)
+        throw new Error(`Problem with geocoding ${response.status}`);
+
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      const { country, city } = data.address;
+      console.log(`You are in ${city}, ${country}`);
+
+      return fetch(`https://restcountries.com/v3.1/name/${country}`);
+    })
+    .then(response => {
+      if (!response.ok) throw new Error(`Country not found!`);
+
+      return response.json();
+    })
+    .then(data => {
+      renderCountry(data[0]);
+    })
+    .catch(err => console.error(`${err.message} 💥💥💥`))
+    .finally(() => (countriesContainer.style.opacity = 1));
+};
+
+btn.addEventListener('click', whereAmI);
