@@ -1,10 +1,10 @@
-6607
+6609
 84/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/index.html1699002426279632455 0
-83/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/script.js1699002740509758025 0
+83/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/script.js1699007438496894742 0
 89/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/shoppingCart.js1699002510339666377 0
 96/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/dist/index.ae8ae5a1.js1699003209909946246 0
-89/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/dist/index.html1699003209909946246 0
-78/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/dist1699003209919946250 1
+89/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/dist/index.html1699007522106903187 0
+78/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/dist1699007522116903188 1
 86/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/package.json1699003204179943935 0
 82/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/clean.js1698930267378759669 0
 91/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/package-lock.json1699002021499452366 0
@@ -3720,6 +3720,7 @@
 161/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/optimizer-svgo/node_modules/css-tree/lib/syntax/node/MediaQuery.js1699001160529015507 0
 137/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@babel/code-frame/node_modules/color-name/index.js1699001160049015080 0
 121/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/css-tree/lib/syntax/scope/value.js1699001153359009347 0
+100/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/dist/index.d37bf85d.js.map1699007522116903188 0
 132/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@swc/helpers/esm/_async_generator_delegate.js1699001154169009996 0
 144/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/core/test/fixtures/config-node-pipeline/.parcelrc1699001159369014476 0
 119/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/css-tree/cjs/tokenizer/index.cjs1699001153099009139 0
@@ -4291,6 +4292,7 @@
 145/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/optimizer-svgo/node_modules/css-tree/lib/convertor1699001160499015480 1
 154/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/optimizer-svgo/node_modules/css-tree/lib/convertor/index.js1699001160499015480 0
 155/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/optimizer-svgo/node_modules/css-tree/lib/convertor/create.js1699001159879014929 0
+96/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/dist/index.d37bf85d.js1699007522106903187 0
 117/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/node-addon-api/tools/README.md1699001153329009323 0
 114/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/css-tree/cjs/utils/List.cjs1699001153109009147 0
 142/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/optimizer-svgo/node_modules/css-tree/lib/syntax1699001160529015507 1
@@ -4710,7 +4712,7 @@
 120/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/css-tree/lib/lexer/match-graph.js1699001153329009323 0
 143/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@babel/helper-validator-identifier/lib/identifier.js.map1699001152909008986 0
 130/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/core/src/TargetDescriptor.schema.js1699001159779014840 0
-100/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/dist/index.8cfc62b9.js.map1699003205809944591 0
+100/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/dist/index.8cfc62b9.js.map1699007423966893398 0
 112/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/core/src/requests1699001159849014903 1
 154/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/optimizer-htmlnano/node_modules/css-tree/lib/lexer/Lexer.js1699001160859015800 0
 117/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@babel/code-frame/lib/index.js1699001152889008970 0
@@ -5181,7 +5183,7 @@
 126/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/csso/node_modules/css-tree/package.json1699001158999014147 0
 164/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/optimizer-htmlnano/node_modules/css-tree/lib/syntax/pseudo/matches.js1699001160889015827 0
 160/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/optimizer-htmlnano/node_modules/css-tree/lib/syntax/pseudo/not.js1699001160889015827 0
-96/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/dist/index.8cfc62b9.js1699003205809944591 0
+96/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/dist/index.8cfc62b9.js1699007423966893398 0
 120/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/reporter-cli/src/emoji.js1699001158149013392 0
 153/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/optimizer-htmlnano/node_modules/css-tree/lib/syntax/atrule1699001160919015853 1
 163/home/ptt/complete-javascript-course/17-Modern-JS-Modules-Tooling/starter/node_modules/@parcel/optimizer-htmlnano/node_modules/css-tree/lib/syntax/atrule/import.js1699001160859015800 0
